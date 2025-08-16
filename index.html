@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClothingStore</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<header id="top">
+  <div class="logo"><a href="#top">Clothing Store</a></div>
+
+  <nav>
+    <ul class="main-menu">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#new-arrivals">New Arrivals</a></li>
+      <li><a href="#offers">Offers</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-actions">
+    <div class="search-wrap">
+      <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="Dresses">Dresses</option>
+        <option value="Jackets">Jackets</option>
+        <option value="Shoes">Shoes</option>
+        <option value="Pants">Pants</option>
+        <option value="Tops">Tops</option>
+      </select>
+      <input id="searchInput" type="text" placeholder="Search products…"/>
+      <ul id="suggestions" class="suggestions"></ul>
+    </div>
+
+    <button id="loginBtn" class="account" aria-pressed="false">Login</button>
+    <button class="icon-btn wishlist-open" title="Wishlist">♡</button>
+    <button class="icon-btn cart-open" title="Cart">
+      🛒 <span id="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="shop">
+  <div class="hero-slider">
+    <div class="slide" style="background-image:url('images/E2z6Twy2h2XD.jpg')">
+      <div class="hero-cta">
+        <h1>New Season Dresses</h1>
+        <p>Breezy styles for your summer.</p>
+        <a href="#new-arrivals" class="btn">Shop Now</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image:url('images/6N3j0yKERswN.jpg')">
+      <div class="hero-cta">
+        <h1>Elegant Looks</h1>
+        <p>From day to night in one click.</p>
+        <a href="#best-sellers" class="btn">Explore</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image:url('images/EQYEb2fKYW4r.jpg')">
+      <div class="hero-cta">
+        <h1>Streetwear Drop</h1>
+        <p>Bold pieces that turn heads.</p>
+        <a href="#trending" class="btn">Discover</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="categories" class="categories section">
+  <h2>Shop by Category</h2>
+  <div class="category-grid">
+    <a href="#new-arrivals" class="category-card" data-cat="Dresses">
+      <img src="images/7WpPXIekEzcU.jpg" alt="Wedding Dress"/>
+      <h3>Wedding Dress</h3><p>Cozy & stylish</p>
+    </a>
+    <a href="#new-arrivals" class="category-card" data-cat="Pants">
+      <img src="images/6N3j0yKERswN.jpg" alt="Frocks"/>
+      <h3>Frocks</h3><p>Modern fits</p>
+    </a>
+    <a href="#new-arrivals" class="category-card" data-cat="Jackets">
+      <img src="images/denim_jacket_main.jpg" alt="Denim Jacket"/>
+      <h3>Jackets</h3><p>Layer in style</p>
+    </a>
+    <a href="#new-arrivals" class="category-card" data-cat="Shoes">
+      <img src="images/E2z6Twy2h2XD.jpg" alt="Pakistan Traditions"/>
+      <h3>Pakistan Traditions"</h3><p>Comfort & fashion</p>
+    </a>
+    <a href="#new-arrivals" class="category-card" data-cat="Tops">
+      <img src="images/U5NlTq9m031U.jpg" alt="Bridal Dress"/>
+      <h3>Bridal Dress</h3><p>Daily essentials</p>
+    </a>
+  </div>
+</section>
+
+<section id="offers" class="promotions section">
+  <div class="promo-banner">
+    <h2>🎉 Up to 50% OFF — Clearance</h2>
+    <a href="#best-sellers" class="btn">Shop Sale</a>
+  </div>
+  <div class="flash-sale">
+    <h3>⚡ Flash Sale ends in <span id="countdown">--:--:--</span></h3>
+  </div>
+</section>
+
+<section id="new-arrivals" class="products section">
+  <div class="section-head">
+    <h2>New Arrivals</h2>
+    <div class="head-actions">
+      <button class="scroll-left" data-target="#newArrivalsGrid">‹</button>
+      <button class="scroll-right" data-target="#newArrivalsGrid">›</button>
+    </div>
+  </div>
+  <div id="newArrivalsGrid" class="card-row"></div>
+</section>
+
+<section id="best-sellers" class="products section">
+  <div class="section-head">
+    <h2>Best Sellers</h2>
+    <div class="head-actions">
+      <button class="scroll-left" data-target="#bestGrid">‹</button>
+      <button class="scroll-right" data-target="#bestGrid">›</button>
+    </div>
+  </div>
+  <div id="bestGrid" class="card-row"></div>
+</section>
+
+<section id="recommended" class="products section hidden">
+  <div class="section-head">
+    <h2>Recommended For You</h2>
+    <div class="head-actions">
+      <button class="scroll-left" data-target="#recGrid">‹</button>
+      <button class="scroll-right" data-target="#recGrid">›</button>
+    </div>
+  </div>
+  <div id="recGrid" class="card-row"></div>
+  <p class="muted login-hint">Login to see personalized picks.</p>
+</section>
+
+<section id="trending" class="products section">
+  <div class="section-head">
+    <h2>Trending Now</h2>
+    <div class="head-actions">
+      <button class="scroll-left" data-target="#trendGrid">‹</button>
+      <button class="scroll-right" data-target="#trendGrid">›</button>
+    </div>
+  </div>
+  <div id="trendGrid" class="card-row"></div>
+</section>
+
+<section id="top-rated" class="products section">
+  <div class="section-head">
+    <h2>Top Rated</h2>
+    <div class="head-actions">
+      <button class="scroll-left" data-target="#ratedGrid">‹</button>
+      <button class="scroll-right" data-target="#ratedGrid">›</button>
+    </div>
+  </div>
+  <div id="ratedGrid" class="card-row"></div>
+</section>
+
+<section id="recently-viewed" class="products section">
+  <div class="section-head">
+    <h2>Recently Viewed</h2>
+    <div class="head-actions">
+      <button class="scroll-left" data-target="#recentGrid">‹</button>
+      <button class="scroll-right" data-target="#recentGrid">›</button>
+    </div>
+  </div>
+  <div id="recentGrid" class="card-row"></div>
+</section>
+
+<section class="trust-badges section">
+  <div class="badges">
+    <div>✔ Secure Payments</div>
+    <div>✔ Free Shipping</div>
+    <div>✔ Easy Returns</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#new-arrivals">New Arrivals</a></li>
+        <li><a href="#offers">Offers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Customer Service</h3>
+      <ul>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Shipping Info</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-bottom"> Farwa ClothingStore</p>
+</footer>
+
+<div id="cartModal" class="side-modal">
+  <div class="side-panel">
+    <div class="panel-head">
+      <h3>Your Cart</h3>
+      <button class="close">✖</button>
+    </div>
+    <div class="panel-body" id="cartItems"></div>
+    <div class="panel-foot">
+      <div class="total">Total: $<span id="cartTotal">0</span></div>
+      <button id="checkoutBtn" class="btn">Checkout</button>
+    </div>
+  </div>
+</div>
+
+<div id="wishlistModal" class="center-modal">
+  <div class="center-card">
+    <div class="panel-head">
+      <h3>Your Wishlist</h3>
+      <button class="close">✖</button>
+    </div>
+    <div class="panel-body" id="wishlistItems"></div>
+  </div>
+</div>
+
+<div id="quickView" class="center-modal">
+  <div class="center-card">
+    <div class="panel-head">
+      <h3 id="qvTitle">Product</h3>
+      <button class="close">✖</button>
+    </div>
+    <div class="qv-body">
+      <img id="qvImg" src="" alt=""/>
+      <div class="qv-info">
+        <p id="qvPrice"></p>
+        <p id="qvCat" class="muted"></p>
+        <div class="qv-actions">
+          <button id="qvAdd" class="btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
