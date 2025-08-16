@@ -1,8 +1,4 @@
-Perfect 👌 Tumhari repo `Clothing-web` ek clothing store website hai, uske liye main ek **professional README.md** bana deta hoon jo GitHub pe smart lage. Tum bas isko apni repo ke root folder me `README.md` naam se save kar do.
 
-Here’s the full content:
-
-```markdown
 # 👗 Clothing Store Website
 
 A modern and responsive **Clothing E-Commerce Website** built with **HTML, CSS, and JavaScript**.  
@@ -102,4 +98,6 @@ Clothing-web/
 * Database for storing products
 
 ---
+## 🌐 Live Demo
+👉 [View Website](https://resonant-kringle-028c0e.netlify.app)
 
